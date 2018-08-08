@@ -1,5 +1,10 @@
-[Installation Tutorial](https://github.com/Tai7sy/card-system/wiki/BT%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B)<br>
+> 商业版预览: [http://fakala.xyz/](http://fakala.xyz/)
+
+> 开源版当前版本: 1.6
+
 [BT面板安装教程](https://github.com/Tai7sy/card-system/wiki/BT%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B)<br><br>
+
+
 
 ## Require
 PHP >= 7.0.0
@@ -10,6 +15,8 @@ PHP >= 7.0.0
 ```
 chmod -R 777 storage/
 chmod -R 777 bootstrap/cache/
+chmod -R 777 app/Library/Pay/Aliqr/f2fpay/log/ #if using Aliqr
+chmod -R 777 app/Library/Pay/Wechat/logs/ #if using Wechat
 ```
  - Renamed the .env.example file to .env
  - Config .env file (according to yourself)
@@ -43,6 +50,8 @@ cp .env.example .env #linux
 ```
 chmod -R 777 storage/
 chmod -R 777 bootstrap/cache/
+chmod -R 777 app/Library/Pay/Aliqr/f2fpay/log/ #如果使用了支付宝当面付
+chmod -R 777 app/Library/Pay/Wechat/logs/ #如果使用了微信支付
 ```
  - 优化 (可选)
 ```
@@ -59,5 +68,9 @@ php artisan config:cache
 ## Question
 1. 修改 .env 不起作用?
 - 修改 .env 之后, 需要运行 `php artisan config:cache`
+
+2. 支持的支付方式?
+- 支付宝 支付宝手机版 当面付 微信扫码 微信H5 
+- 第三四五六七八...方支付接口: Fakala(商业测试站API, 目前可使用) Mzhipay(@Cghang提供) Yeke(已跑路)
 
 
